@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="./vue.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
+  
   <link rel="stylesheet" href="./style.css">
   <title>Techno</title>
 </head>
@@ -41,7 +41,7 @@
         </div>
         <div class="modal_dados">
           <button @click="produto = false" class="modal_fechar">X</button>
-          <span class="modal_preco">{{produto.preco}}</span>
+          <span class="modal_preco">{{produto.preco | numeroPreco}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
           <button v-if="produto.estoque > 0" class="modal_btn" @click="adicionarItem">Adicionar Item</button>
