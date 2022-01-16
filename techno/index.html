@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="./vue.min.js"></script>
-  
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif:400,700" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <title>Techno</title>
 </head>
@@ -14,12 +14,7 @@
     <header class="header">
       <img class="logo" src="./assets/techno.svg" alt="Techno">
       <div class="carrinho_menu">{{carrinhoTotal | numeroPreco}} | {{carrinho.length}}</div>
-      <ul>
-        <li v-for="(item, index) in carrinho">
-          <p>{{item.nome}}</p>
-          <button @click="removerItem(index)">X</button>
-        </li>
-      </ul>
+    
     </header>
 
 
@@ -41,7 +36,7 @@
         </div>
         <div class="modal_dados">
           <button @click="produto = false" class="modal_fechar">X</button>
-          <span class="modal_preco">{{produto.preco | numeroPreco}}</span>
+          <span class="modal_preco">{{produto.preco}}</span>
           <h2 class="modal_titulo">{{produto.nome}}</h2>
           <p>{{produto.descricao}}</p>
           <button v-if="produto.estoque > 0" class="modal_btn" @click="adicionarItem">Adicionar Item</button>
@@ -58,8 +53,7 @@
         </div>
       </div>
     </section>
-<div class="alerta" :class="{ativo: alertaAtivo}">
-<p class="alerta_mensagem">{{mensagemAlerta}}</p></div>
+
   </div>
 
   <script src="./app.js"></script>
